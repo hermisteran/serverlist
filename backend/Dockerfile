@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
         --with-freetype \
         --with-jpeg \
         --with-webp \
-    && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql pdo_sqlite mbstring exif pcntl bcmath \
+    && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql pdo_sqlite pdo_pgsql mbstring exif pcntl bcmath \
+
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configurar límites de subida en PHP
