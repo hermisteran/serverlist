@@ -42,6 +42,9 @@ fi
 php artisan config:clear
 php artisan config:cache
 
+# ejecutar test
+php artisan test --env=testing
+
 # Ejecutar migraciones y seeders
 php artisan migrate:fresh --seed --force
 
@@ -53,8 +56,7 @@ php artisan scribe:generate
 chmod -R 755 /var/www/html/public/vendor
 chown -R www-data:www-data /var/www/html/public/vendor
 
-# ejecutar test
-php artisan test --env=testing
+
 
 # Iniciar Apache
 echo "Iniciando Apache"
