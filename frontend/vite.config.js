@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
       server: {
         port: env.APP_PORT ? Number(env.APP_PORT) : 5173,
         host: true,
-        allowedHosts: 'all'
+        allowedHosts: true
       },
 
   }
