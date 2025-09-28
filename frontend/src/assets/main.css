@@ -42,3 +42,6 @@ a,
 .required {
   color: red;
 }
+#app {
+  display: block; /* o remove grid styles */
+}
