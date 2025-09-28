@@ -55,8 +55,10 @@ php artisan migrate --seed --force
 # Crear storage link
 php artisan storage:link
 
-# Generar documentación scribe 
+# Generar documentación scribe y permisos
 php artisan scribe:generate
+chmod -R 755 public/vendor
+chown -R www-data:www-data public/vendor
 
 # Iniciar Apache
 echo "Iniciando Apache"
