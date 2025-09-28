@@ -55,6 +55,9 @@ php artisan migrate --seed --force
 # Crear storage link
 php artisan storage:link
 
+# Generar documentación scribe 
+php artisan scribe:generate
+
 # Iniciar Apache
 echo "Iniciando Apache"
 exec apache2-foreground
