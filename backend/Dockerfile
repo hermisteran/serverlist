@@ -9,12 +9,12 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip unzip git curl sqlite3 libsqlite3-dev \
+    libpq-dev \  
     && docker-php-ext-configure gd \
         --with-freetype \
         --with-jpeg \
         --with-webp \
     && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql pdo_sqlite pdo_pgsql mbstring exif pcntl bcmath \
-
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configurar límites de subida en PHP
