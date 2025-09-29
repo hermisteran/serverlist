@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Server;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class ServerFactory extends Factory
 {
@@ -13,7 +12,7 @@ class ServerFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => null, 
+            'image' => null,
             'host' => $this->faker->domainName(),
             'ip' => $this->faker->ipv4(),
             'description' => $this->faker->text(80),

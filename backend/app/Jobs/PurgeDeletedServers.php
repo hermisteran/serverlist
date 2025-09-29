@@ -3,13 +3,13 @@
 namespace App\Jobs;
 
 use App\Models\Server;
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class PurgeDeletedServers implements ShouldQueue
 {
@@ -24,13 +24,13 @@ class PurgeDeletedServers implements ShouldQueue
         foreach ($servers as $server) {
             /**
              * eliminar imagen si existe
-             */ 
+             */
             if ($server->image && Storage::disk('public')->exists($server->image)) {
                 Storage::disk('public')->delete($server->image);
             }
             /**
              * Eliminar físicamente el registro
-             */ 
+             */
             $server->forceDelete();
         }
     }

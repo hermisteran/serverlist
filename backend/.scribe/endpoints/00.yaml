@@ -1,0 +1,509 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/servers
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Listar todos los servidores'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data": [{"id":1,"host":"example.com","ip":"192.168.0 1","description":"Example server","image":null,"image_url":null,"order":1,"created_at":"2024-06-01 12:00:00","updated_at":"2024-06-01 12:00:00","deleted_at":null}],"count":1}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Error interno del servidor."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/servers
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Crear un servidor'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 5120 kilobytes.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      host:
+        name: host
+        description: 'El nombre del host.'
+        required: true
+        example: telecentro.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ip:
+        name: ip
+        description: 'La dirección IP del servidor.'
+        required: true
+        example: 192.12.12.1
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'La descripción del servidor.'
+        required: false
+        example: 'Servidor de prueba'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      host: telecentro.com
+      ip: 192.12.12.1
+      description: 'Servidor de prueba'
+    fileParameters:
+      image: null
+    responses:
+      -
+        status: 200
+        content: '{"data": {"id":1,"host":"example.com","ip":"192.168.0 1","description":"Example server","image":null,"image_url":null,"order":1,"created_at":"2024-06-01 12:00:00","updated_at":"2024-06-01 12:00:00","deleted_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 201
+        content: '{"message": "Servidor creado correctamente.","data": {"id":1,"host":"telecentro.com","ip":"192.168.0.1","description":"Servidor de prueba","image":"servers/abcd1234.jpg","image_url":"http://localhost/storage/servers/abcd1234.jpg","order":1,"created_at":"2024-06-01 12:00:00","updated_at":"2024-06-01 12:00:00","deleted_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message": "The given data was invalid.","errors": {"ip": ["La IP debe tener formato IPv4 válido."]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Error interno del servidor."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/servers/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mostrar un server específico'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the server.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      server:
+        name: server
+        description: 'El ID del servidor.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      host:
+        name: host
+        description: 'El nombre del host.'
+        required: true
+        example: telecentro.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      ip:
+        name: ip
+        description: 'La dirección IP del servidor.'
+        required: true
+        example: 192.1.1.1
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'La descripción del servidor.'
+        required: false
+        example: 'Servidor de prueba'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      server: 1
+      host: telecentro.com
+      ip: 192.1.1.1
+      description: 'Servidor de prueba'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data": {"id":1,"host":"example.com","ip":"192.168.0 1","description":"Example server","image":null,"image_url":null,"order":1,"created_at":"2024-06-01 12:00:00","updated_at":"2024-06-01 12:00:00","deleted_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Servidor no encontrado."}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Error interno del servidor."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/servers/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Modificar un servidor'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the server.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 5120 kilobytes.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      host:
+        name: host
+        description: 'Must not be greater than 100 characters.'
+        required: true
+        example: vmqeopfuudtdsufvyvddq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      ip:
+        name: ip
+        description: 'Must match the regex /^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$/. Must not be greater than 45 characters.'
+        required: true
+        example: amniihfqcoynlazghdtqt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Must not be greater than 200 characters.'
+        required: false
+        example: 'Necessitatibus architecto aut consequatur debitis et id.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      order:
+        name: order
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      host: vmqeopfuudtdsufvyvddq
+      ip: amniihfqcoynlazghdtqt
+      description: 'Necessitatibus architecto aut consequatur debitis et id.'
+      order: 17
+    fileParameters:
+      image: null
+    responses:
+      -
+        status: 200
+        content: '{"data": {"id":1,"host":"example.com","ip":"192.168.0 1","description":"Example server","image":null,"image_url":null,"order":1,"created_at":"2024-06-01 12:00:00","updated_at":"2024-06-01 12:00:00","deleted_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Servidor no encontrado."}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Error interno del servidor."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/servers/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Eliminar un servidor'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the server.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"message": "Servidor eliminado (soft delete)."}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Servidor no encontrado."}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Error interno del servidor."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: api/update-order-server
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Cambiar el order de un servidor'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      servers:
+        name: servers
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'servers[].id':
+        name: 'servers[].id'
+        description: 'The <code>id</code> of an existing record in the servers table.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'servers[].order':
+        name: 'servers[].order'
+        description: 'Must be at least 0.'
+        required: true
+        example: 45
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      servers:
+        -
+          id: 17
+          order: 45
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"message": "Orden actualizado.","data": {"id":1,"host":"example.com","ip":"192.168.0 1","description":"Example server","image":null,"image_url":null,"order":2,"created_at":"2024-06-01 12:00:00","updated_at":"2024-06-01 12:00:00","deleted_at":null}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "Servidor no encontrado."}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"message": "Error interno del servidor."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

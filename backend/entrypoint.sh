@@ -42,9 +42,6 @@ fi
 php artisan config:clear
 php artisan config:cache
 
-# ejecutar test
-php artisan test --env=testing
-
 # Ejecutar migraciones y seeders
 php artisan migrate:fresh --seed --force
 

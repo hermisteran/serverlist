@@ -1,0 +1,11 @@
+{
+  "preset": "laravel",
+  "exclude": [
+    "database/migrations",
+    "storage"
+  ],
+  "notPath": ["resources"],
+  "rules": {
+    "phpdoc_no_empty_return": true
+  }
+}

@@ -22,7 +22,7 @@ class ServerApiTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonStructure([
                 'data',
-                'count'
+                'count',
             ]);
     }
 
@@ -89,12 +89,12 @@ class ServerApiTest extends TestCase
         $this->assertSoftDeleted('servers', ['id' => $server->id]);
     }
 
-     /** @test */
+    /** @test */
     public function actualiza_el_orden_de_los_servidores()
     {
 
         $servers = Server::factory()->count(3)->create([
-            'order' => 0
+            'order' => 0,
         ]);
 
         $data = [
@@ -102,13 +102,13 @@ class ServerApiTest extends TestCase
                 ['id' => $servers[0]->id, 'order' => 3],
                 ['id' => $servers[1]->id, 'order' => 1],
                 ['id' => $servers[2]->id, 'order' => 2],
-            ]
+            ],
         ];
 
         $response = $this->patchJson('/api/update-order-server', $data);
 
         $response->assertStatus(200)
-                 ->assertJson(['message' => 'Orden actualizado correctamente.']);
+            ->assertJson(['message' => 'Orden actualizado correctamente.']);
 
         $this->assertEquals(3, $servers[0]->fresh()->order);
         $this->assertEquals(1, $servers[1]->fresh()->order);
