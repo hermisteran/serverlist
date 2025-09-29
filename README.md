@@ -21,7 +21,7 @@ cd serverlist
 
 2. Levantar contenedores:
 ```bash
-docker compose up --build -d
+docker compose up --build
 ```
 
 4. Acceder:
