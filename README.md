@@ -24,11 +24,6 @@ cd serverlist
 docker compose up --build -d
 ```
 
-3. Ejecutar migraciones y seeders:
-```bash
-docker exec -it laravel-backend php artisan migrate --seed
-```
-
 4. Acceder:
 - **Backend:** [http://localhost:8000/api/servers](http://localhost:8000/api/servers)
 - **Documentación de API (Scribe):** [http://localhost:8080/docs](http://localhost:8080/docs)
