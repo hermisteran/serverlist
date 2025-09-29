@@ -15,7 +15,7 @@
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/serverlist.git
+git clone https://github.com/hermisteran/serverlist.git
 cd serverlist
 ```
 
