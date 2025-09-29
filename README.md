@@ -15,18 +15,13 @@
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/serverlist.git
+git clone https://github.com/hermisteran/serverlist.git
 cd serverlist
 ```
 
 2. Levantar contenedores:
 ```bash
-docker compose up --build -d
-```
-
-3. Ejecutar migraciones y seeders:
-```bash
-docker exec -it laravel-backend php artisan migrate --seed
+docker compose up --build
 ```
 
 4. Acceder:
@@ -132,7 +127,7 @@ El proyecto incluye `docker-compose.yml` que levanta:
 - **Frontend (Vue 3)** → en `http://localhost:5173`
 - **Base de datos MySQL 8** → puerto `3306`
 
-### Variables de entorno importantes:
+### Variables de entorno importantes (Ajustar values):
 
 ```yaml
 APP_ENV: local
