@@ -127,7 +127,7 @@ El proyecto incluye `docker-compose.yml` que levanta:
 - **Frontend (Vue 3)** → en `http://localhost:5173`
 - **Base de datos MySQL 8** → puerto `3306`
 
-### Variables de entorno importantes:
+### Variables de entorno importantes (Ajustar values):
 
 ```yaml
 APP_ENV: local
