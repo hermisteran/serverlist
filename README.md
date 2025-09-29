@@ -2,6 +2,7 @@
 # Gestión de servidores – Fullstack Challenge (PHP + Vue)
 
 ## Proyecto desplegado
+> Puede tardar en cargar unos minutos al principio.
 
 | Parte | URL |
 |------|------|
@@ -138,6 +139,17 @@ DB_DATABASE: serverlist
 DB_USERNAME: root
 DB_PASSWORD: root
 ```
+---
+
+## Capturas de pantalla
+
+| Vista                                             | Imagen                               |
+| ------------------------------------------------- | ------------------------------------ |
+| **Docker Compose levantando los servicios** | ![Captura 1](/captures/capture1.png) |
+| **Vista del proyecto corriendo en localhost:5173**              | ![Captura 2](/captures/capture3.png) |
+| **Test ejecutados desde Github Actions**                      | ![Captura 3](/captures/capture4.png) |
+| **Documentación de API (Scribe) localhost:8000**              | ![Captura 4](/captures/capture5.png) |
+| **Ejecución de laravel pint, fix code. desde Github Actions**              | ![Captura 5](/captures/capture6.png) |
 
 ---
 
