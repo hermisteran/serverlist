@@ -1,0 +1,21 @@
+name: Laravel Pint
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  phplint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Laravel Pint
+        uses: aglipanci/laravel-pint-action@latest
+        with:
+          preset: laravel
+          verboseMode: true
+          testMode: true
+          configPath: "backend/pint.json"
+          pintVersion: 1.8.0
+          onlyDirty: true
+          onlyDiff: "main"
+        working-directory: backend
