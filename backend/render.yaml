@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: server-app-pg
+    env: docker
+    dockerfilePath: ./Dockerfile
+    startCommand: "/entrypoint.sh"
+    envVars:
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d3ckbfa4d50c73cks4qg-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: laravelweb
+      - key: DB_USERNAME
+        value: htweb
+      - key: DB_PASSWORD
+        value: o6tFQ8PYI8YQG13UNEGYx4uc5S9tMzSd

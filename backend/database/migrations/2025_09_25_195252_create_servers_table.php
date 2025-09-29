@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('host', 100);
-            $table->string('ip', 15); 
+            $table->string('ip', 15);
             $table->string('description', 200)->nullable();
-            $table->integer('order')->default(0); 
+            $table->integer('order')->default(0);
             $table->timestamps();
-            $table->softDeletes(); 
+            $table->softDeletes();
         });
     }
 

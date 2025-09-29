@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Server;
+use Illuminate\Database\Seeder;
 
 class ServerSeeder extends Seeder
 {

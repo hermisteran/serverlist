@@ -25,7 +25,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://server-api.test";
+        var tryItOutBaseUrl = "http://localhost:8000";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -84,11 +84,8 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-servers--id-">
                                 <a href="#endpoints-DELETEapi-servers--id-">Eliminar un servidor</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-servers--server_id--order">
-                                <a href="#endpoints-PATCHapi-servers--server_id--order">Cambiar el order de un servidor</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-servers--server_id--restore">
-                                <a href="#endpoints-POSTapi-servers--server_id--restore">Restaurar un servidor eliminado (soft delete)</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-update-order-server">
+                                <a href="#endpoints-PATCHapi-update-order-server">Cambiar el order de un servidor</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -99,7 +96,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 26, 2025</li>
+        <li>Last updated: September 29, 2025</li>
     </ul>
 </div>
 
@@ -108,7 +105,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://server-api.test</code>
+    <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
@@ -133,7 +130,7 @@
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://server-api.test/api/servers';
+$url = 'http://localhost:8000/api/servers';
 $response = $client-&gt;get(
     $url,
     [
@@ -266,7 +263,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://server-api.test/api/servers';
+$url = 'http://localhost:8000/api/servers';
 $response = $client-&gt;post(
     $url,
     [
@@ -289,7 +286,7 @@ $response = $client-&gt;post(
             ],
             [
                 'name' =&gt; 'image',
-                'contents' =&gt; fopen('C:\Users\Encantador\AppData\Local\Temp\phpCD97.tmp', 'r')
+                'contents' =&gt; fopen('/tmp/php2BeIaU', 'r')
             ],
         ],
     ]
@@ -444,7 +441,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\Encantador\AppData\Local\Temp\phpCD97.tmp</code></p>
+<p>Must be an image. Must not be greater than 5120 kilobytes. Example: <code>/tmp/php2BeIaU</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>host</code></b>&nbsp;&nbsp;
@@ -494,7 +491,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://server-api.test/api/servers/1';
+$url = 'http://localhost:8000/api/servers/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -696,7 +693,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://server-api.test/api/servers/1';
+$url = 'http://localhost:8000/api/servers/1';
 $response = $client-&gt;put(
     $url,
     [
@@ -707,23 +704,23 @@ $response = $client-&gt;put(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'host',
-                'contents' =&gt; 'b'
+                'contents' =&gt; 'vmqeopfuudtdsufvyvddq'
             ],
             [
                 'name' =&gt; 'ip',
-                'contents' =&gt; 'n'
+                'contents' =&gt; 'amniihfqcoynlazghdtqt'
             ],
             [
                 'name' =&gt; 'description',
-                'contents' =&gt; 'Animi quos velit et fugiat.'
+                'contents' =&gt; 'Necessitatibus architecto aut consequatur debitis et id.'
             ],
             [
                 'name' =&gt; 'order',
-                'contents' =&gt; '16'
+                'contents' =&gt; '17'
             ],
             [
                 'name' =&gt; 'image',
-                'contents' =&gt; fopen('C:\Users\Encantador\AppData\Local\Temp\phpCE05.tmp', 'r')
+                'contents' =&gt; fopen('/tmp/phpqPTQSu', 'r')
             ],
         ],
     ]
@@ -868,7 +865,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\Encantador\AppData\Local\Temp\phpCE05.tmp</code></p>
+<p>Must be an image. Must not be greater than 5120 kilobytes. Example: <code>/tmp/phpqPTQSu</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>host</code></b>&nbsp;&nbsp;
@@ -876,10 +873,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="host"                data-endpoint="PUTapi-servers--id-"
-               value="b"
+               value="vmqeopfuudtdsufvyvddq"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>b</code></p>
+<p>Must not be greater than 100 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ip</code></b>&nbsp;&nbsp;
@@ -887,10 +884,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="ip"                data-endpoint="PUTapi-servers--id-"
-               value="n"
+               value="amniihfqcoynlazghdtqt"
                data-component="body">
     <br>
-<p>Must match the regex /^((25[0-5]|2[0-4]\d|[01]?\d\d?).){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$/. Must not be greater than 45 characters. Example: <code>n</code></p>
+<p>Must match the regex /^((25[0-5]|2[0-4]\d|[01]?\d\d?).){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$/. Must not be greater than 45 characters. Example: <code>amniihfqcoynlazghdtqt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -898,10 +895,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-servers--id-"
-               value="Animi quos velit et fugiat."
+               value="Necessitatibus architecto aut consequatur debitis et id."
                data-component="body">
     <br>
-<p>Must not be greater than 200 characters. Example: <code>Animi quos velit et fugiat.</code></p>
+<p>Must not be greater than 200 characters. Example: <code>Necessitatibus architecto aut consequatur debitis et id.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -909,10 +906,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="order"                data-endpoint="PUTapi-servers--id-"
-               value="16"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>16</code></p>
+<p>Example: <code>17</code></p>
         </div>
         </form>
 
@@ -929,7 +926,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://server-api.test/api/servers/1';
+$url = 'http://localhost:8000/api/servers/1';
 $response = $client-&gt;delete(
     $url,
     [
@@ -1056,20 +1053,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PATCHapi-servers--server_id--order">Cambiar el order de un servidor</h2>
+                    <h2 id="endpoints-PATCHapi-update-order-server">Cambiar el order de un servidor</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-PATCHapi-servers--server_id--order">
+<span id="example-requests-PATCHapi-update-order-server">
 <blockquote>Example request:</blockquote>
 
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://server-api.test/api/servers/1/order';
+$url = 'http://localhost:8000/api/update-order-server';
 $response = $client-&gt;patch(
     $url,
     [
@@ -1078,7 +1075,12 @@ $response = $client-&gt;patch(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'order' =&gt; 27,
+            'servers' =&gt; [
+                [
+                    'id' =&gt; 17,
+                    'order' =&gt; 45,
+                ],
+            ],
         ],
     ]
 );
@@ -1087,7 +1089,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
-<span id="example-responses-PATCHapi-servers--server_id--order">
+<span id="example-responses-PATCHapi-update-order-server">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1128,43 +1130,43 @@ print_r(json_decode((string) $body));</code></pre></div>
 }</code>
  </pre>
     </span>
-<span id="execution-results-PATCHapi-servers--server_id--order" hidden>
+<span id="execution-results-PATCHapi-update-order-server" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-PATCHapi-servers--server_id--order"></span>:
+                id="execution-response-status-PATCHapi-update-order-server"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-PATCHapi-servers--server_id--order"
+    <pre class="json"><code id="execution-response-content-PATCHapi-update-order-server"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-PATCHapi-servers--server_id--order" hidden>
+<span id="execution-error-PATCHapi-update-order-server" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PATCHapi-servers--server_id--order">
+    <pre><code id="execution-error-message-PATCHapi-update-order-server">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-PATCHapi-servers--server_id--order" data-method="PATCH"
-      data-path="api/servers/{server_id}/order"
+<form id="form-PATCHapi-update-order-server" data-method="PATCH"
+      data-path="api/update-order-server"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-servers--server_id--order', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-update-order-server', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PATCHapi-servers--server_id--order"
-                    onclick="tryItOut('PATCHapi-servers--server_id--order');">Try it out ⚡
+                    id="btn-tryout-PATCHapi-update-order-server"
+                    onclick="tryItOut('PATCHapi-update-order-server');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PATCHapi-servers--server_id--order"
-                    onclick="cancelTryOut('PATCHapi-servers--server_id--order');" hidden>Cancel 🛑
+                    id="btn-canceltryout-PATCHapi-update-order-server"
+                    onclick="cancelTryOut('PATCHapi-update-order-server');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PATCHapi-servers--server_id--order"
+                    id="btn-executetryout-PATCHapi-update-order-server"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1172,7 +1174,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-purple">PATCH</small>
-            <b><code>api/servers/{server_id}/order</code></b>
+            <b><code>api/update-order-server</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1180,7 +1182,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PATCHapi-servers--server_id--order"
+                              name="Content-Type"                data-endpoint="PATCHapi-update-order-server"
                value="application/json"
                data-component="header">
     <br>
@@ -1191,198 +1193,47 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PATCHapi-servers--server_id--order"
+                              name="Accept"                data-endpoint="PATCHapi-update-order-server"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>server_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="server_id"                data-endpoint="PATCHapi-servers--server_id--order"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the server. Example: <code>1</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>servers</code></b>&nbsp;&nbsp;
+<small>object[]</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="order"                data-endpoint="PATCHapi-servers--server_id--order"
-               value="27"
+               step="any"               name="servers.0.id"                data-endpoint="PATCHapi-update-order-server"
+               value="17"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>27</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-POSTapi-servers--server_id--restore">Restaurar un servidor eliminado (soft delete)</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-servers--server_id--restore">
-<blockquote>Example request:</blockquote>
-
-
-<div class="php-example">
-    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://server-api.test/api/servers/1/restore';
-$response = $client-&gt;post(
-    $url,
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-servers--server_id--restore">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Servidor restaurado correctamente.&quot;,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;host&quot;: &quot;example.com&quot;,
-        &quot;ip&quot;: &quot;192.168.0 1&quot;,
-        &quot;description&quot;: &quot;Example server&quot;,
-        &quot;image&quot;: null,
-        &quot;image_url&quot;: null,
-        &quot;order&quot;: 1,
-        &quot;created_at&quot;: &quot;2024-06-01 12:00:00&quot;,
-        &quot;updated_at&quot;: &quot;2024-06-  01 12:00:00&quot;,
-        &quot;deleted_at&quot;: null
-    }
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (400):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;El servidor no est&aacute; eliminado.&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Servidor no encontrado.&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Error interno del servidor.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-servers--server_id--restore" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-servers--server_id--restore"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-servers--server_id--restore"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-servers--server_id--restore" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-servers--server_id--restore">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-servers--server_id--restore" data-method="POST"
-      data-path="api/servers/{server_id}/restore"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-servers--server_id--restore', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-servers--server_id--restore"
-                    onclick="tryItOut('POSTapi-servers--server_id--restore');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-servers--server_id--restore"
-                    onclick="cancelTryOut('POSTapi-servers--server_id--restore');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-servers--server_id--restore"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/servers/{server_id}/restore</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-servers--server_id--restore"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-servers--server_id--restore"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>server_id</code></b>&nbsp;&nbsp;
+<p>The <code>id</code> of an existing record in the servers table. Example: <code>17</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="server_id"                data-endpoint="POSTapi-servers--server_id--restore"
-               value="1"
-               data-component="url">
+               step="any"               name="servers.0.order"                data-endpoint="PATCHapi-update-order-server"
+               value="45"
+               data-component="body">
     <br>
-<p>The ID of the server. Example: <code>1</code></p>
-            </div>
-                    </form>
+<p>Must be at least 0. Example: <code>45</code></p>
+                    </div>
+                                    </details>
+        </div>
+        </form>
 
             
 

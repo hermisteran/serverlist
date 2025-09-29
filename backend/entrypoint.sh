@@ -31,13 +31,6 @@ DB_PASSWORD=${DB_PASSWORD:-root}
 EOF
 fi
 
-# Esperar a que la DB esté lista
-# echo "Esperando conexión a la base de datos en $DB_HOST:$DB_PORT"
-# until nc -z "$DB_HOST" "$DB_PORT"; do
-#   echo "DB no disponible aún. Reintentando"
-#   sleep 2
-# done
-# echo "Base de datos disponible."
 
 # Generar APP_KEY si falta
 if ! grep -q "APP_KEY=" .env || [ -z "$(grep APP_KEY .env | cut -d '=' -f2)" ]; then
@@ -50,10 +43,17 @@ php artisan config:clear
 php artisan config:cache
 
 # Ejecutar migraciones y seeders
-php artisan migrate --seed --force
+php artisan migrate:fresh --seed --force
 
 # Crear storage link
 php artisan storage:link
+
+# Generar documentación scribe y permisos
+php artisan scribe:generate
+chmod -R 755 /var/www/html/public/vendor
+chown -R www-data:www-data /var/www/html/public/vendor
+
+
 
 # Iniciar Apache
 echo "Iniciando Apache"

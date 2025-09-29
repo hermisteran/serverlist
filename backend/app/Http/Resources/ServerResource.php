@@ -15,7 +15,7 @@ class ServerResource extends JsonResource
             'ip' => $this->ip,
             'description' => $this->description,
             'image' => $this->image,
-            'image_url' => url('storage/'.$this->image), 
+            'image_url' => url('storage/'.$this->image),
             'order' => $this->order,
             'created_at' => $this->created_at?->toDateTimeString(),
             'updated_at' => $this->updated_at?->toDateTimeString(),
